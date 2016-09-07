@@ -27,6 +27,7 @@ public class ObservableActivity extends AppCompatActivity {
     private static final String TAG = "ObservableActivity";
 
     TextView result;
+    int countSuzuki;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,10 +46,11 @@ public class ObservableActivity extends AppCompatActivity {
             observableJustJava8();
         });
 
-        Button observable_just_map_j7 = (Button) findViewById(R.id.observable_just_map_j7);
-        observable_just_map_j7.setOnClickListener(view -> {
-            initJustMapJava7();
-        });
+        Button observable_just_map_j7 = (Button) findViewById(R.id.observable_from_map_j7);
+        observable_just_map_j7.setOnClickListener(view -> initFromMapJava7());
+
+        Button observable_just_map_j8 = (Button) findViewById(R.id.observable_from_map_j8);
+        observable_just_map_j8.setOnClickListener(view -> initFromMapJava8());
 
         Button observable_just_flatmap_j7 = (Button) findViewById(R.id.observable_just_flatmap_j7);
         observable_just_flatmap_j7.setOnClickListener(view -> {
@@ -141,19 +143,22 @@ public class ObservableActivity extends AppCompatActivity {
     /**
      * observable just map sample for java 7
      */
-    private void initJustMapJava7() {
-        Observable<List<String>> observable = Observable.just(getList());
-        observable.map(new Func1<List<String>, Integer>() {
+    private void initFromMapJava7() {
+        countSuzuki = 0;
+        Observable<String> observable = Observable.from(getList());
+        observable.map(new Func1<String, Integer>() {
             @Override
-            public Integer call(List<String> list) {
-                Log.d(TAG, "call");
-                return list.size();
+            public Integer call(String str) {
+                if (str.equals("suzuki")) {
+                    return 1;
+                }
+                return 0;
             }
         }).subscribe(new Observer<Integer>() {
 
             @Override
             public void onCompleted() {
-                Log.d(TAG, "initJustMapJava7 onCompleted.");
+                Log.d(TAG, "initFromMapJava7 onCompleted.");
             }
 
             @Override
@@ -163,7 +168,9 @@ public class ObservableActivity extends AppCompatActivity {
 
             @Override
             public void onNext(Integer integer) {
-                Log.d(TAG, "initJustMapJava7 onNext : list count :" + integer);
+                Log.d(TAG, "initFromMapJava7 onNext : integer :" + integer);
+                countSuzuki = countSuzuki + integer;
+                result.setText(String.valueOf(countSuzuki));
             }
         });
     }
@@ -171,20 +178,24 @@ public class ObservableActivity extends AppCompatActivity {
     /**
      * observable just map sample for java 8
      */
-    private void initJustMapJava8() {
-        Observable<List<String>> observable = Observable.just(getList());
-        observable.map(list -> call(list)).subscribe(integer -> onNext(integer), error -> onError(error), () -> onCompleted());
+    private void initFromMapJava8() {
+        countSuzuki = 0;
+        Observable<String> observable = Observable.from(getList());
+        observable.map(str -> call(str)).subscribe(integer -> onNext(integer), error -> onError(error), () -> onCompleted());
     }
 
     /**
      * observable just map call for java 8
      *
-     * @param strings
+     * @param str
      * @return
      */
-    public Integer call(List<String> strings) {
+    public Integer call(String str) {
         Log.d(TAG, "initJustMapJava8 call");
-        return strings.size();
+        if (str.equals("suzuki")) {
+            return 1;
+        }
+        return 0;
     }
 
     /**
@@ -193,7 +204,9 @@ public class ObservableActivity extends AppCompatActivity {
      * @param integer
      */
     private void onNext(Integer integer) {
-        Log.d(TAG, "initJava8 onNext : list count :" + integer);
+        Log.d(TAG, "initFromMapJava8 onNext : integer :" + integer);
+        countSuzuki = countSuzuki + integer;
+        result.setText(String.valueOf(countSuzuki));
     }
 
     /**

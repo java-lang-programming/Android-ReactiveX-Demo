@@ -9,38 +9,27 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="java_lang_programming.com.android_reactivex_demo.MainActivity"
-    tools:showIn="@layout/app_bar_main">
-
-    <!--<TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />-->
+    tools:context="java_lang_programming.com.android_reactivex_demo.ui.ObservableMapActivity"
+    tools:showIn="@layout/activity_observable_map">
 
     <Button
-        android:id="@+id/observable"
+        android:id="@+id/observable_from_map_j7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Observable" />
+        android:text="observable_just_map(java7)" />
 
     <Button
-        android:id="@+id/observable_map"
+        android:id="@+id/observable_from_map_j8"
+        android:layout_below="@+id/observable_from_map_j7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/observable"
-        android:text="Observable Map" />
+        android:text="observable_just_map(java8)" />
 
-    <!--<Button
-        android:id="@+id/async_subject"
+    <TextView
+        android:id="@+id/result"
+        android:layout_below="@+id/observable_from_map_j8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="AsyncSubject" />
-
-    <Button
-        android:id="@+id/behavior_subject"
-        android:layout_below="@+id/async_subject"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="BehaviorSubject" />-->
+        android:text="result"/>
 
 </RelativeLayout>

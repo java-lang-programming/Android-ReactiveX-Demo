@@ -17,11 +17,13 @@ import android.widget.Button;
 
 import java_lang_programming.com.android_reactivex_demo.ui.AsyncSubjectActivity;
 import java_lang_programming.com.android_reactivex_demo.ui.ObservableActivity;
+import java_lang_programming.com.android_reactivex_demo.ui.ObservableMapActivity;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private Button observable;
+    private Button observable_map;
     private Button async_subject;
     private Button behavior_subject;
 
@@ -31,6 +33,9 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        Button observable_map = (Button) findViewById(R.id.observable_map);
+        observable_map.setOnClickListener(view -> moveObservableMap());
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -139,6 +144,11 @@ public class MainActivity extends AppCompatActivity
 
     private void moveObservableActivity() {
         Intent intent = new Intent(this, ObservableActivity.class);
+        startActivity(intent);
+    }
+
+    private void moveObservableMap() {
+        Intent intent = new Intent(this, ObservableMapActivity.class);
         startActivity(intent);
     }
 

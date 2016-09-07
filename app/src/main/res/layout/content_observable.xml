@@ -26,25 +26,26 @@
         android:text="observable_just(java8)" />
 
     <Button
-        android:id="@+id/observable_just_map_j7"
+        android:id="@+id/observable_from_map_j7"
         android:layout_below="@+id/observable_just_j8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="observable_just_map(java7)" />
 
     <Button
-        android:id="@+id/observable_just_map_j8"
-        android:layout_below="@+id/observable_just_map_j7"
+        android:id="@+id/observable_from_map_j8"
+        android:layout_below="@+id/observable_from_map_j7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="observable_just_map(java8)" />
 
     <Button
         android:id="@+id/observable_just_flatmap_j7"
-        android:layout_below="@+id/observable_just_map_j8"
+        android:layout_below="@+id/observable_from_map_j8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="observable_just_flatmap(java7)" />
+        android:text="observable_just_flatmap(java7)"
+        android:visibility="gone" />
 
     <TextView
         android:id="@+id/result"

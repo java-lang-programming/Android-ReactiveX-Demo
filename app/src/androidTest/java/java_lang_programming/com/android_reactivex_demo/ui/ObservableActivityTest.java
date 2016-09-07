@@ -20,7 +20,6 @@ import static android.support.test.espresso.assertion.ViewAssertions.matches;
 
 /**
  * Created by msuzuki on 2016/09/04.
- * https://github.com/googlesamples/android-testing/blob/master/ui/espresso/BasicSample/app/build.gradle
  */
 @RunWith(AndroidJUnit4.class)
 @LargeTest
