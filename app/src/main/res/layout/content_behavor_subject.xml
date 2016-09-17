@@ -9,45 +9,34 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="java_lang_programming.com.android_reactivex_demo.MainActivity"
-    tools:showIn="@layout/app_bar_main">
-
-    <!--<TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />-->
-
-    <Button
-        android:id="@+id/observable"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Observable" />
-
-    <Button
-        android:id="@+id/observable_map"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/observable"
-        android:text="Observable Map" />
-
-    <Button
-        android:id="@+id/behavor_subject"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/observable_map"
-        android:text="BehavorSubject" />
-
-    <!--<Button
-        android:id="@+id/async_subject"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="AsyncSubject" />
+    tools:context=".ui.BehaviorSubjectActivity"
+    tools:showIn="@layout/activity_behavor_subject">
 
     <Button
         android:id="@+id/behavior_subject"
-        android:layout_below="@+id/async_subject"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="BehaviorSubject" />-->
+        android:text="BehavorSubject(java7)" />
+
+    <Button
+        android:id="@+id/behavior_subject_distinctUntilChanged"
+        android:layout_below="@+id/behavior_subject"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BehavorSubject(java7)" />
+
+    <EditText
+        android:id="@+id/text"
+        android:layout_below="@+id/behavior_subject_distinctUntilChanged"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="sample" />
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_below="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="result" />
 
 </RelativeLayout>

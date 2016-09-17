@@ -15,6 +15,9 @@ import rx.Observable;
 import rx.Observer;
 import rx.functions.Func1;
 
+/**
+ * ObservableMap sample
+ */
 public class ObservableMapActivity extends AppCompatActivity {
 
     private static final String TAG = "ObservableMapActivity";

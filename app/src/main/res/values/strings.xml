@@ -7,4 +7,5 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_observable">ObservableActivity</string>
     <string name="title_activity_observable_map">ObservableMapActivity</string>
+    <string name="title_activity_behavor_subject">BehavorSubjectActivity</string>
 </resources>

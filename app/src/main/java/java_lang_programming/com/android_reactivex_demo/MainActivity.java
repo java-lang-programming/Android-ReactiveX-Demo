@@ -16,6 +16,7 @@ import android.view.View;
 import android.widget.Button;
 
 import java_lang_programming.com.android_reactivex_demo.ui.AsyncSubjectActivity;
+import java_lang_programming.com.android_reactivex_demo.ui.BehaviorSubjectActivity;
 import java_lang_programming.com.android_reactivex_demo.ui.ObservableActivity;
 import java_lang_programming.com.android_reactivex_demo.ui.ObservableMapActivity;
 
@@ -36,6 +37,9 @@ public class MainActivity extends AppCompatActivity
 
         Button observable_map = (Button) findViewById(R.id.observable_map);
         observable_map.setOnClickListener(view -> moveObservableMap());
+
+        Button behavor_subject = (Button) findViewById(R.id.behavor_subject);
+        behavor_subject.setOnClickListener(view -> moveBehavorSubjectActivity());
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -154,6 +158,11 @@ public class MainActivity extends AppCompatActivity
 
     private void moveAsyncSubjectActivity() {
         Intent intent = new Intent(this, AsyncSubjectActivity.class);
+        startActivity(intent);
+    }
+
+    private void moveBehavorSubjectActivity() {
+        Intent intent = new Intent(this, BehaviorSubjectActivity.class);
         startActivity(intent);
     }
 }

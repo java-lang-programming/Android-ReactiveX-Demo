@@ -26,6 +26,10 @@
         <activity
             android:name=".ui.ObservableMapActivity"
             android:label="@string/title_activity_observable_map"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.BehaviorSubjectActivity"
+            android:label="@string/title_activity_behavor_subject"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
