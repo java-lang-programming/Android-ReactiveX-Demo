@@ -37,6 +37,13 @@
         android:layout_below="@+id/observable_map"
         android:text="BehavorSubject" />
 
+    <Button
+        android:id="@+id/pub_sub_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/behavor_subject"
+        android:text="Pub/Sub" />
+
     <!--<Button
         android:id="@+id/async_subject"
         android:layout_width="wrap_content"

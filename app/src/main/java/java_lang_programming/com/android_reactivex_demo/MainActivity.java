@@ -15,10 +15,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import java_lang_programming.com.android_reactivex_demo.model.Book;
 import java_lang_programming.com.android_reactivex_demo.ui.AsyncSubjectActivity;
 import java_lang_programming.com.android_reactivex_demo.ui.BehaviorSubjectActivity;
 import java_lang_programming.com.android_reactivex_demo.ui.ObservableActivity;
 import java_lang_programming.com.android_reactivex_demo.ui.ObservableMapActivity;
+import java_lang_programming.com.android_reactivex_demo.ui.PubSubActivity;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -40,6 +42,9 @@ public class MainActivity extends AppCompatActivity
 
         Button behavor_subject = (Button) findViewById(R.id.behavor_subject);
         behavor_subject.setOnClickListener(view -> moveBehavorSubjectActivity());
+
+        Button pub_sub_btn = (Button) findViewById(R.id.pub_sub_btn);
+        pub_sub_btn.setOnClickListener(view -> movePubSubActivity());
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -86,7 +91,8 @@ public class MainActivity extends AppCompatActivity
 //            }
 //        });
 
-
+        Book book = new Book();
+        book.isBook(Book.CATEGORY_BOOK);
     }
 
     @Override
@@ -163,6 +169,11 @@ public class MainActivity extends AppCompatActivity
 
     private void moveBehavorSubjectActivity() {
         Intent intent = new Intent(this, BehaviorSubjectActivity.class);
+        startActivity(intent);
+    }
+
+    private void movePubSubActivity() {
+        Intent intent = new Intent(this, PubSubActivity.class);
         startActivity(intent);
     }
 }

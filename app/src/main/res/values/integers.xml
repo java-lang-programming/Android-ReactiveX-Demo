@@ -1,0 +1,4 @@
+<resources>
+    <integer name="word_min_count">5</integer>
+    <integer name="word_max_count">20</integer>
+</resources>

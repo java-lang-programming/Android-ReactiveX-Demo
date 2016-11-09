@@ -8,4 +8,11 @@
     <string name="title_activity_observable">ObservableActivity</string>
     <string name="title_activity_observable_map">ObservableMapActivity</string>
     <string name="title_activity_behavor_subject">BehavorSubjectActivity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="validate_maximun_word">%1$sは%2$d文字以下です</string>
+    <string name="validate_minimun_word">%1$sは%2$d文字以上です</string>
+    <string name="validate_require">%1$sは必須入力です</string>
 </resources>
