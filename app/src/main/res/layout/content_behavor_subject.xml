@@ -23,7 +23,7 @@
         android:layout_below="@+id/behavior_subject"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="BehavorSubject(java7)" />
+        android:text="BehavorSubject_distinctUntilChanged(java7)" />
 
     <EditText
         android:id="@+id/text"

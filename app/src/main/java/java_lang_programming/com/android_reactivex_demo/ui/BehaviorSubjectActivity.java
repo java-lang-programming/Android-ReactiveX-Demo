@@ -3,6 +3,7 @@ package java_lang_programming.com.android_reactivex_demo.ui;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -15,6 +16,8 @@ import rx.subjects.BehaviorSubject;
  * BehaviorSubject Sample
  */
 public class BehaviorSubjectActivity extends AppCompatActivity {
+
+    private static final String TAG = "BehaviorSubjectActivity";
 
     BehaviorSubject<String> behaviorSubject = BehaviorSubject.create();
     BehaviorSubject<String> behaviorSubjectDistinct = BehaviorSubject.create();
@@ -49,16 +52,17 @@ public class BehaviorSubjectActivity extends AppCompatActivity {
                 new Observer<String>() {
                     @Override
                     public void onCompleted() {
-
+                        Log.d(TAG, "onCompleted");
                     }
 
                     @Override
                     public void onError(Throwable e) {
-
+                        Log.d(TAG, "onError");
                     }
 
                     @Override
                     public void onNext(String strings) {
+                        Log.d(TAG, "onNext :" + strings);
                         result.setText(result.getText().toString() + strings);
                     }
                 });
@@ -91,6 +95,7 @@ public class BehaviorSubjectActivity extends AppCompatActivity {
      * execution
      */
     private void behavior_subject_java_7() {
+        behaviorSubject.onCompleted();
         behaviorSubject.onNext(text.getText().toString());
     }
 
@@ -100,5 +105,6 @@ public class BehaviorSubjectActivity extends AppCompatActivity {
     private void behavior_subject_distinctUntilChanged_java_7() {
         behaviorSubjectDistinct.onNext(text.getText().toString());
     }
+
 
 }

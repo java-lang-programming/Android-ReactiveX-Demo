@@ -1,19 +1,18 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 24
+    compileSdkVersion 25
     buildToolsVersion rootProject.buildToolsVersion
 
     defaultConfig {
         applicationId "java_lang_programming.com.android_reactivex_demo"
         minSdkVersion 16
-        targetSdkVersion 24
+        targetSdkVersion 25
         versionCode 1
         versionName "1.0"
         jackOptions {
             enabled true
         }
-
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     compileOptions {
@@ -49,6 +48,6 @@ dependencies {
     compile 'com.eccyan:rxjava-optional:' + rootProject.rxjavaOptional
 
 
-    compile 'com.android.support:support-v4:24.2.1'
+    compile 'com.android.support:support-v4:' + rootProject.supportLibVersion
     testCompile 'junit:junit:4.12'
 }
